@@ -9,7 +9,7 @@
 
 ---
 
-![Dashboard Preview](assets/img/zepdash_modern_preview.png)
+![Dashboard Preview](assets/img/dashboard-preview-wide.png)
 
 ---
 
