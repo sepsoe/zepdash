@@ -32,5 +32,5 @@ This project includes modified portions of code from:
 zepdash also uses the following open-source libraries:
 
 - [Bootstrap 5](https://getbootstrap.com/) — Licensed under the MIT License.  
-- [Phosphor Icons](https://phosphoricons.com/) — Licensed under the MIT License.  
-- [Chart.js](https://www.chartjs.org/) — Licensed under the MIT License.  
+- [Phosphor Icons](https://phosphoricons.com/) — Licensed under the MIT License.
+- [Apache ECharts](https://echarts.apache.org/) — Licensed under the [Apache License 2.0]

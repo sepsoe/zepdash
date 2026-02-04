@@ -8,21 +8,21 @@
   <title>zepdash</title>
 
   <!-- Meta SEO -->
-  <meta name="description" content="zepdash is a modern Bootstrap-based admin dashboard built for developers to create analytics and data visualization tools easily." />
-  <meta name="keywords" content="zepdash, admin dashboard, bootstrap, analytics, webapp, developer tool" />
-  <meta name="author" content="zupzep developer" />
+  <meta name="description" content="zepdash is a modern Bootstrap-based admin dashboard" />
+  <meta name="keywords" content="zepdash, admin dashboard, bootstrap, webapp" />
+  <meta name="author" content="zupzep" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://zepdash.vercel.app/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="zepdash - Modern Admin Dashboard for Developers" />
-  <meta property="og:description" content="A Bootstrap-based admin dashboard designed for analytics and developer tools." />
+  <meta property="og:title" content="zepdash - Modern Admin Dashboard" />
+  <meta property="og:description" content="A Bootstrap-based admin dashboard" />
   <meta property="og:image" content="https://zepdash.vercel.app/assets/img/logo.png" />
   <meta property="og:url" content="https://zepdash.vercel.app/" />
   <meta property="og:type" content="website" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="https://zepdash.vercel.app/assets/img/favicon.ico" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,11 +30,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <!-- Styles -->
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="assets/css/styles.css" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/phosphor/bold/style.css" />
-  <link rel="stylesheet" href="assets/css/phosphor/regular/style.css" />
-  <link rel="stylesheet" href="assets/css/phosphor/fill/style.css" />
+  <link href="https://zepdash.vercel.app/assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://zepdash.vercel.app/assets/css/styles.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://zepdash.vercel.app/assets/css/phosphor/bold/style.css" />
+  <link rel="stylesheet" href="https://zepdash.vercel.app/assets/css/phosphor/regular/style.css" />
+  <link rel="stylesheet" href="https://zepdash.vercel.app/assets/css/phosphor/fill/style.css" />
 
   <!-- Schema.org (Developer + App Info) -->
   <script type="application/ld+json">
@@ -43,12 +43,12 @@
     "@type": "WebApplication",
     "name": "zepdash",
     "url": "https://zepdash.vercel.app",
-    "applicationCategory": "Dashboard, Analytics, Developer Tool",
+    "applicationCategory": "Dashboard",
     "operatingSystem": "All",
-    "description": "zepdash is a modern, Bootstrap-based admin dashboard designed for developers to build analytics and data visualization panels.",
+    "description": "zepdash is a modern, Bootstrap-based admin dashboard",
     "author": {
       "@type": "Person",
-      "name": "zupzep developer",
+      "name": "zupzep",
       "url": "https://github.com/zupzep"
     },
     "creator": {
@@ -59,24 +59,25 @@
     "softwareVersion": "1.0.0",
     "inLanguage": "en",
     "license": "https://opensource.org/licenses/MIT",
-    "keywords": ["zepdash", "bootstrap dashboard", "admin template", "developer tool", "web analytics"]
+    "keywords": ["zepdash", "bootstrap dashboard", "admin template"]
   }
   </script>
 
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-T8JTCG66');</script>
-  <!-- End Google Tag Manager -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LFD5RJJSHD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LFD5RJJSHD');
+  </script>
 </head>
 
 <body class="zd-nav-fixed">
   <header>
     <nav class="zd-topnav navbar navbar-expand navbar-light">
       <div class="navbar-brand ps-3 d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="zepdash Logo" class="logo-navbar" />
+        <img src="https://zepdash.vercel.app/assets/img/logo.png" alt="logo" class="logo-navbar" />
         <span class="ms-2 fw-semibold">zepdash</span>
       </div>
 
@@ -87,13 +88,12 @@
       <ul class="navbar-nav ms-auto">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle dropdown-user" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span>zepdash User</span>
+            <span><i class="ph-bold ph-user"></i> zupzep</span>
           </a>
-          <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#!">Settings</a></li>
-            <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#!">Logout</a></li>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="#">Change Password</a></li>
+            <li><a class="dropdown-item" href="#">Logout</a></li>
           </ul>
         </li>
       </ul>
@@ -107,7 +107,7 @@
           <div class="nav">
             <h2 class="zd-sidenav-menu-heading">Menu</h2>
 
-            <a class="nav-link active" href="index.html">
+            <a class="nav-link active" href="#">
               <div class="zd-nav-link-icon"><i class="ph-bold ph-house"></i></div>
               <span>Dashboard</span>
             </a>
@@ -126,12 +126,55 @@
                 <a class="nav-link" href="#">Cards</a>
               </nav>
             </div>
+
+            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#formsCollapse">
+              <div class="zd-nav-link-icon"><i class="ph-bold ph-square-split-vertical"></i></div>
+              <span>Forms</span>
+              <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
+            </a>
+
+            <div class="collapse" id="formsCollapse" data-bs-parent="#sidenavAccordion">
+              <nav class="zd-sidenav-menu-nested nav">
+                <a class="nav-link" href="#">Basic Input</a>
+                <a class="nav-link" href="#">Form Layout</a>
+                <a class="nav-link" href="#">Form Validation</a>
+              </nav>
+            </div>
+
+            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#tablesCollapse">
+              <div class="zd-nav-link-icon"><i class="ph-bold ph-grid-four"></i></div>
+              <span>Tables</span>
+              <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
+            </a>
+
+            <div class="collapse" id="tablesCollapse" data-bs-parent="#sidenavAccordion">
+              <nav class="zd-sidenav-menu-nested nav">
+                <a class="nav-link" href="#">Basic Table</a>
+                <a class="nav-link" href="#">Responsive Table</a>
+                <a class="nav-link" href="#">DataTables</a>
+              </nav>
+            </div>
+
+            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapse">
+              <div class="zd-nav-link-icon"><i class="ph-bold ph-file"></i></div>
+              <span>Pages</span>
+              <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
+            </a>
+
+            <div class="collapse" id="pagesCollapse" data-bs-parent="#sidenavAccordion">
+              <nav class="zd-sidenav-menu-nested nav">
+                <a class="nav-link" href="#">Login</a>
+                <a class="nav-link" href="#">Register</a>
+                <a class="nav-link" href="#">404 Error</a>
+              </nav>
+            </div>
+            
           </div>
         </div>
 
         <footer class="zd-sidenav-footer">
           <small>Logged in as:</small>
-          <div>zepdash User</div>
+          <div>Superadmin</div>
         </footer>
       </nav>
     </aside>
@@ -139,31 +182,23 @@
     <main id="layoutSidenav_content">
       <section class="container-fluid px-4">
         <header class="my-4">
-          <h1 class="h4 mb-0">zepdash Dashboard</h1>
-          <p class="text-muted">Modern admin dashboard for developers with responsive design.</p>
+          <h1 class="h4 mb-0">Dashboard</h1>
+          <p class="text-muted">Welcome to zepdash</p>
         </header>
 
         <div class="row">
-          <article class="col-lg-4">
+          <div class="col-lg-8">
             <div class="card mb-4">
               <div class="card-body">
-                Example of using <code>.zd-sidenav-light</code> for light navigation.
+                <div id="barChart" style="height: 400px;"></div>
               </div>
             </div>
-          </article>
+          </div>
 
           <article class="col-lg-4">
             <div class="card mb-4">
               <div class="card-body">
-                Switch to <code>.zd-sidenav-dark</code> for a dark mode experience.
-              </div>
-            </div>
-          </article>
-
-          <article class="col-lg-4">
-            <div class="card mb-4">
-              <div class="card-body">
-                zepdash helps developers build responsive dashboards faster.
+                <div id="pieChart" style="height: 400px;"></div>
               </div>
             </div>
           </article>
@@ -172,12 +207,76 @@
     </main>
   </div>
 
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/scripts.js"></script>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8JTCG66"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  <script src="https://zepdash.vercel.app/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="https://zepdash.vercel.app/assets/js/scripts.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+  <script>
+    // === BAR CHART ===
+    const barDom = document.getElementById('barChart');
+    const barChart = echarts.init(barDom);
+    const barOption = {
+      tooltip: { trigger: 'axis' },
+      legend: { bottom: 0 },
+      xAxis: {
+        type: 'category',
+        data: ['Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab', 'Min']
+      },
+      yAxis: { type: 'value' },
+      series: [
+        {
+          name: 'Aktif',
+          data: [120, 200, 150, 80, 70, 110, 130],
+          type: 'bar',
+          itemStyle: { color: '#4e73df' }
+        },
+        {
+          name: 'Tidak Aktif',
+          data: [60, 100, 90, 40, 50, 70, 60],
+          type: 'bar',
+          itemStyle: { color: '#e74a3b' }
+        }
+      ]
+    };
+    barChart.setOption(barOption);
+
+    // === PIE CHART ===
+    const pieDom = document.getElementById('pieChart');
+    const pieChart = echarts.init(pieDom);
+    const pieOption = {
+      tooltip: { trigger: 'item', formatter: '{b}: {c} ({d}%)' },
+      legend: { bottom: 0 },
+      series: [
+        {
+          name: 'Status Pelanggan',
+          type: 'pie',
+          radius: '65%',
+          center: ['50%', '50%'],
+          data: [
+            { value: 1048, name: 'Aktif' },
+            { value: 735, name: 'Tidak Aktif' },
+            { value: 580, name: 'Pending' },
+            { value: 484, name: 'Banned' },
+          ],
+          emphasis: {
+            itemStyle: {
+              shadowBlur: 10,
+              shadowOffsetX: 0,
+              shadowColor: 'rgba(0, 0, 0, 0.5)'
+            }
+          }
+        }
+      ]
+    };
+    pieChart.setOption(pieOption);
+
+    // Responsif
+    window.addEventListener('resize', () => {
+      barChart.resize();
+      pieChart.resize();
+    });
+  </script>
+
 </body>
 </html>
+
 

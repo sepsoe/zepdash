@@ -1,7 +1,7 @@
 # zepdash  
 [![en](https://img.shields.io/badge/lang-en-red.svg)](README.md)
 [![id](https://img.shields.io/badge/lang-id-blue.svg)](README.id.md)
-![GitHub all releases](https://img.shields.io/github/downloads/zupzep/zepdash/total?color=brightgreen&label=downloads)
+![GitHub all releases](https://img.shields.io/github/downloads/zupzep/zepdash/total)
 
 <img src="https://raw.githubusercontent.com/zupzep/zepdash/4416bd5b54ec5591015c683400a423402f71ed3b/assets/img/logo.png" alt="logo" width="100">
 
@@ -66,7 +66,7 @@ Common ready-to-use pages:
 ## ⚙️ Technologies Used
 - [Bootstrap 5](https://getbootstrap.com/)
 - [Phosphor Icons](https://phosphoricons.com/)
-- *(Optional)* [Chart.js](https://www.chartjs.org/) for simple charts
+- [Apache ECharts](https://echarts.apache.org/)
 
 ---
 
@@ -74,13 +74,10 @@ Common ready-to-use pages:
 
 You can use Zepdash as a **static HTML template** or integrate it into your workflow.
 
-### Option 1 — Static HTML
+### Static HTML
 Just clone the repository and open the file in your browser:
 ```bash
 git clone https://github.com/zupzep/zepdash.git
 cd zepdash
 
 open index.html
-
-
-
