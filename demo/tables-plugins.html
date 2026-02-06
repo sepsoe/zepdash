@@ -6,34 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- Meta SEO -->
     <meta name="description" content="ZepDash - Free Bootstrap 5 Admin Dashboard" />
     <meta name="keywords" content="zepdash, admin dashboard, bootstrap 5, ui kit, webapp" />
     <meta name="author" content="ZepDash" />
     <meta name="robots" content="index, follow" />
 
-    <!-- Open Graph -->
     <meta property="og:title" content="ZepDash - Free Bootstrap 5 Admin Dashboard" />
     <meta property="og:description" content="ZepDash - Free Bootstrap 5 Admin Dashboard" />
     <meta property="og:type" content="website" />
-    <title>ZepDash - Basic Inputs</title>
+    <title>ZepDash - Plugin Tables</title>
+
     <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
     <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/plugins/nprogress/nprogress.min.css" />
     <link href="../assets/styles/styles.css" rel="stylesheet" />
-
     <link rel="stylesheet" href="../assets/plugins/animate/animate.min.css" />
-
-    <link rel="stylesheet" href="../assets/plugins/sweetalert2/sweetalert2.min.css" />
-
-    <link rel="stylesheet" href="../assets/plugins/tempus-dominus/css/tempus-dominus.min.css" />
-
-    <link rel="stylesheet" href="../assets/plugins/select2/css/select2.min.css" />
-    <link rel="stylesheet" href="../assets/plugins/select2/css/select2-bootstrap-5-theme.min.css" />
-
     <link rel="stylesheet" href="../assets/plugins/simplebar/simplebar.min.css" />
     <link rel="stylesheet" href="../assets/plugins/phosphor/bold/style.css" />
+
+    <!-- Bootstrap Table -->
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css">
+    <!-- Grid.js -->
+    <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+
+    <style>
+        .gridjs-container {
+            padding: 0;
+            display: block;
+        }
+
+        .gridjs-wrapper {
+            border-radius: var(--zd-radius);
+            border: 1px solid var(--zd-border);
+        }
+
+        .gridjs-thead th {
+            background-color: var(--zd-bg-light) !important;
+            color: var(--zd-text) !important;
+            font-weight: 600 !important;
+            border-bottom: 2px solid var(--zd-border) !important;
+        }
+
+        .gridjs-td {
+            border: 1px solid var(--zd-border) !important;
+        }
+    </style>
 </head>
 
 <body class='zd-nav-fixed'>
@@ -48,7 +67,7 @@
             </button>
 
             <ul class="navbar-nav ms-auto align-items-center">
-                                                                        <!-- Messages -->
+                                                                <!-- Messages -->
                 <li class="nav-item dropdown me-2">
                     <a class="nav-link nav-icon" href="#" id="msgDropdown" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -167,21 +186,16 @@
                         <li>
                             <hr class="dropdown-divider m-0 opacity-10">
                         </li>
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center" href="profile.html">
-                                <i class="ph-bold ph-gear me-3 text-muted"></i> Account
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center text-danger" href="login.html">
-                                <i class="ph-bold ph-sign-out me-3"></i> Logout
-                            </a>
-                        </li>
+                        <li><a class="dropdown-item d-flex align-items-center" href="profile.html"><i
+                                    class="ph-bold ph-user me-3 text-muted"></i> Profile</a></li>
+                        <li><a class="dropdown-item d-flex align-items-center text-danger" href="login.html"><i
+                                    class="ph-bold ph-sign-out me-3"></i> Logout</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
     </header>
+
     <div id="layoutSidenav">
         <aside id="layoutSidenav_nav">
             <nav class="zd-sidenav accordion zd-sidenav-light" id="sidenavAccordion">
@@ -225,14 +239,14 @@
                                 <a class="nav-link" href="spinners.html">Spinners</a>
                             </nav>
                         </div>
-                        <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#formsCollapse" aria-expanded="true">
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#formsCollapse" aria-expanded="false">
                             <div class="zd-nav-link-icon"><i class="ph-bold ph-textbox"></i></div>
                             <span>Forms</span>
                             <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
                         </a>
-                        <div class="collapse show" id="formsCollapse" data-bs-parent="#sidenavAccordion">
+                        <div class="collapse" id="formsCollapse" data-bs-parent="#sidenavAccordion">
                             <nav class="zd-sidenav-menu-nested nav">
-                                <a class="nav-link active" href="forms-basic.html">Basic Inputs</a>
+                                <a class="nav-link" href="forms-basic.html">Basic Inputs</a>
                                 <a class="nav-link" href="forms-select.html">Select</a>
                                 <a class="nav-link" href="forms-checks.html">Checkboxes & Radios</a>
                                 <a class="nav-link" href="forms-layout.html">Form Layout</a>
@@ -240,16 +254,16 @@
                                 <a class="nav-link" href="forms-editors.html">Editors</a>
                             </nav>
                         </div>
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#tablesCollapse" aria-expanded="false">
+                        <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#tablesCollapse" aria-expanded="true">
                             <div class="zd-nav-link-icon"><i class="ph-bold ph-table"></i></div>
                             <span>Tables</span>
                             <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
                         </a>
-                        <div class="collapse" id="tablesCollapse" data-bs-parent="#sidenavAccordion">
+                        <div class="collapse show" id="tablesCollapse" data-bs-parent="#sidenavAccordion">
                             <nav class="zd-sidenav-menu-nested nav">
                                 <a class="nav-link" href="tables-basic.html">Basic Table</a>
                                 <a class="nav-link" href="tables-datatables.html">DataTables</a>
-                                <a class="nav-link" href="tables-plugins.html">Plugin Tables</a>
+                                <a class="nav-link active" href="tables-plugins.html">Plugin Tables</a>
                             </nav>
                         </div>
                         <h2 class="zd-sidenav-menu-heading">Style</h2>
@@ -308,155 +322,148 @@
                         </div>
                     </div>
                 </div>
-                <footer class="zd-sidenav-footer"><small>Logged in as:</small>
+                <footer class="zd-sidenav-footer">
+                    <small>Logged in as:</small>
                     <div>Ujang Kasep</div>
                 </footer>
             </nav>
         </aside>
+
         <main id="layoutSidenav_content">
-            <section class="container-fluid px-4">
+            <section class="container-fluid px-4 pb-5">
                 <header class="my-4">
-                    <h1 class="h4 mb-0 fw-bold">Basic Inputs</h1>
+                    <h1 class="h4 mb-0 fw-bold">Plugin Tables</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                            <li class="breadcrumb-item">Forms</li>
-                            <li class="breadcrumb-item active">Basic Inputs</li>
+                            <li class="breadcrumb-item">Tables</li>
+                            <li class="breadcrumb-item active">Plugins</li>
                         </ol>
                     </nav>
                 </header>
+
                 <div class="row">
-                    <div class="col-lg-6">
-                        <div class="card animate__animated animate__fadeIn mb-4">
-                            <div class="card-header fw-semibold">Text Inputs</div>
-                            <div class="card-body">
-                                <div class="mb-3">
-                                    <label class="form-label">Text</label>
-                                    <input type="text" class="form-control" placeholder="Enter text">
+                    <!-- Bootstrap Table -->
+                    <div class="col-12 mb-5">
+                        <div class="card border-0 shadow-sm rounded-4">
+                            <div class="card-header bg-transparent border-0 pt-4 px-4">
+                                <h5 class="fw-bold mb-0">Bootstrap Table</h5>
+                                <p class="text-muted extra-small mb-0">An extended table with radio, checkbox, sort,
+                                    pagination, and more.</p>
+                            </div>
+                            <div class="card-body p-4">
+                                <div id="toolbar">
+                                    <button id="remove" class="btn btn-danger btn-sm" disabled>
+                                        <i class="ph-bold ph-trash me-1"></i> Delete
+                                    </button>
                                 </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Email</label>
-                                    <input type="email" class="form-control" placeholder="name@example.com">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Password</label>
-                                    <input type="password" class="form-control" placeholder="Password">
-                                </div>
+                                <table id="bootstrap-table" data-toolbar="#toolbar" data-search="true"
+                                    data-show-refresh="true" data-show-toggle="true" data-show-fullscreen="true"
+                                    data-show-columns="true" data-show-columns-toggle-all="true" data-detail-view="true"
+                                    data-show-export="true" data-click-to-select="true"
+                                    data-detail-formatter="detailFormatter" data-minimum-count-columns="2"
+                                    data-show-pagination-switch="true" data-pagination="true" data-id-field="id"
+                                    data-page-list="[10, 25, 50, 100, all]" data-show-footer="true"
+                                    data-side-pagination="server" class="table table-hover">
+                                </table>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="card animate__animated animate__fadeIn mb-4">
-                            <div class="card-header fw-semibold">Textarea & Disabled</div>
-                            <div class="card-body">
-                                <div class="mb-3">
-                                    <label class="form-label">Textarea</label>
-                                    <textarea class="form-control" rows="3" placeholder="Enter message"></textarea>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Disabled</label>
-                                    <input type="text" class="form-control" placeholder="Disabled input" disabled>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Readonly</label>
-                                    <input type="text" class="form-control" value="Readonly value" readonly>
-                                </div>
+
+                    <!-- Grid.js -->
+                    <div class="col-12">
+                        <div class="card border-0 shadow-sm rounded-4">
+                            <div class="card-header bg-transparent border-0 pt-4 px-4">
+                                <h5 class="fw-bold mb-0">Grid.js</h5>
+                                <p class="text-muted extra-small mb-0">A advanced table-plugin that works everywhere.
+                                </p>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="card animate__animated animate__fadeIn mb-4">
-                            <div class="card-header fw-semibold">Sizing</div>
-                            <div class="card-body">
-                                <input class="form-control form-control-lg mb-3" type="text" placeholder="Large input">
-                                <input class="form-control mb-3" type="text" placeholder="Default input">
-                                <input class="form-control form-control-sm" type="text" placeholder="Small input">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="card animate__animated animate__fadeIn mb-4">
-                            <div class="card-header fw-semibold">Input with Icon</div>
-                            <div class="card-body">
-                                <div class="input-group mb-3">
-                                    <span class="input-group-text"><i class="ph-bold ph-user"></i></span>
-                                    <input type="text" class="form-control" placeholder="Username">
-                                </div>
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="Search...">
-                                    <button class="btn btn-primary"><i class="ph-bold ph-magnifying-glass"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="card animate__animated animate__fadeIn mb-4">
-                            <div class="card-header fw-semibold">Advanced Date Pickers (Tempus Dominus)</div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-4 mb-3">
-                                        <label class="form-label">Basic Date</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text"><i class="ph-bold ph-calendar"></i></span>
-                                            <input type="text" class="form-control" id="td-date"
-                                                placeholder="Select date">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <label class="form-label">Date & Time</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text"><i class="ph-bold ph-clock"></i></span>
-                                            <input type="text" class="form-control" id="td-datetime"
-                                                placeholder="Select date time">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <label class="form-label">Range Selection</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text"><i
-                                                    class="ph-bold ph-calendar-range"></i></span>
-                                            <input type="text" class="form-control" id="td-range"
-                                                placeholder="Select range">
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="card-body p-4">
+                                <div id="gridjs-wrapper"></div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </section>
         </main>
     </div>
-    <script src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/plugins/sweetalert2/sweetalert2.all.min.js"></script>
-    <script src="../assets/plugins/popper/popper.min.js"></script>
-    <script src="../assets/plugins/tempus-dominus/js/tempus-dominus.min.js"></script>
-    <script src="../assets/plugins/jquery/jquery.min.js"></script>
-    <script src="../assets/plugins/select2/js/select2.min.js"></script>
 
+    <script src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/plugins/jquery/jquery.min.js"></script>
     <script src="../assets/plugins/simplebar/simplebar.min.js"></script>
     <script src="../assets/plugins/nprogress/nprogress.min.js"></script>
     <script src="../assets/scripts/scripts.js"></script>
+
+    <!-- Bootstrap Table -->
+    <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script>
+    <!-- Grid.js -->
+    <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+
     <script>
         $(function () {
-            const $dateEl = $('#td-date');
-            if ($dateEl.length) {
-                new tempusDominus.TempusDominus($dateEl[0], {
-                    display: { components: { clock: false }, theme: 'light' }
+            // Bootstrap Table Initialization
+            var $table = $('#bootstrap-table');
+
+            function initTable() {
+                $table.bootstrapTable({
+                    height: 500,
+                    columns: [
+                        { field: 'state', checkbox: true, align: 'center', valign: 'middle' },
+                        { title: 'ID', field: 'id', align: 'center', valign: 'middle', sortable: true },
+                        { title: 'Item Name', field: 'name', align: 'center', valign: 'middle', sortable: true },
+                        { title: 'Item Price', field: 'price', align: 'center', valign: 'middle', sortable: true },
+                        { title: 'Actions', align: 'center', valign: 'middle', formatter: operateFormatter }
+                    ],
+                    data: [
+                        { "id": 1, "name": "Item 1", "price": "$1" },
+                        { "id": 2, "name": "Item 2", "price": "$2" },
+                        { "id": 3, "name": "Item 3", "price": "$3" },
+                        { "id": 4, "name": "Item 4", "price": "$4" },
+                        { "id": 5, "name": "Item 5", "price": "$5" },
+                        { "id": 6, "name": "Item 6", "price": "$6" },
+                        { "id": 7, "name": "Item 7", "price": "$7" },
+                        { "id": 8, "name": "Item 8", "price": "$8" },
+                        { "id": 9, "name": "Item 9", "price": "$9" },
+                        { "id": 10, "name": "Item 10", "price": "$10" }
+                    ]
                 });
             }
-            const $datetimeEl = $('#td-datetime');
-            if ($datetimeEl.length) {
-                new tempusDominus.TempusDominus($datetimeEl[0], {
-                    display: { theme: 'light' }
-                });
+
+            function operateFormatter(value, row, index) {
+                return [
+                    '<a class="btn btn-sm btn-light border me-2" href="javascript:void(0)" title="Like">',
+                    '<i class="ph-bold ph-heart"></i>',
+                    '</a>',
+                    '<a class="btn btn-sm btn-danger me-2" href="javascript:void(0)" title="Remove">',
+                    '<i class="ph-bold ph-trash"></i>',
+                    '</a>'
+                ].join('')
             }
-            const $rangeEl = $('#td-range');
-            if ($rangeEl.length) {
-                new tempusDominus.TempusDominus($rangeEl[0], {
-                    display: { components: { clock: false }, theme: 'light' }
-                });
-            }
+
+            initTable();
+
+            // Grid.js Initialization
+            new gridjs.Grid({
+                columns: ["Name", "Email", "Phone Number", "Status"],
+                data: [
+                    ["Atep Rizal", "atep@example.com", "(555) 123-4567", "Active"],
+                    ["Lilis Suryani", "lilis@example.com", "(555) 987-6543", "Inactive"],
+                    ["Ujang Kasep", "ujang@zepdash.com", "(555) 000-1111", "Active"],
+                    ["Siti Juleha", "siti@example.com", "(555) 222-3333", "Active"],
+                    ["Asep Racing", "asep@example.com", "(555) 444-5555", "Pending"]
+                ],
+                search: true,
+                sort: true,
+                pagination: {
+                    limit: 5
+                },
+                style: {
+                    table: {
+                        'font-size': '0.875rem'
+                    }
+                }
+            }).render(document.getElementById("gridjs-wrapper"));
         });
     </script>
 </body>

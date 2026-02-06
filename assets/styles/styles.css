@@ -2,15 +2,25 @@
    ZepDash - Modern UI Styles
    ====================================== */
 
+/* Main theme colors */
 :root {
   --zd-primary: #006fee;
   --zd-primary-light: #3e94ff;
   --zd-primary-dark: #005bc4;
-  --zd-secondary: #71717a;
-  --zd-success: #17c964;
-  --zd-danger: #f31260;
-  --zd-warning: #f5a524;
-  --zd-info: #00b7f4;
+  --zd-secondary: #6c757d;
+  /* Changed from #71717a */
+  --zd-success: #10b981;
+  /* Changed from #17c964 */
+  --zd-danger: #ef4444;
+  /* Changed from #f31260 */
+  --zd-warning: #f59e0b;
+  /* Changed from #f5a524 */
+  --zd-info: #3b82f6;
+  /* Changed from #00b7f4 */
+  --zd-light: #f8f9fa;
+  /* New */
+  --zd-dark: #212529;
+  /* New */
   --zd-border: #e4e4e7;
   --zd-bg-light: #fafafa;
   --zd-text: #11181c;
@@ -22,6 +32,22 @@
   --zd-radius: 10px;
   --zd-radius-lg: 16px;
   --zd-transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* NProgress Custom Styles */
+#nprogress .bar {
+  background: var(--zd-primary) !important;
+  height: 4px !important;
+  z-index: 10000 !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px var(--zd-primary), 0 0 5px var(--zd-primary) !important;
+}
+
+#nprogress .spinner-icon {
+  border-top-color: var(--zd-primary) !important;
+  border-left-color: var(--zd-primary) !important;
 }
 
 body {
@@ -129,6 +155,12 @@ body {
 
 .zd-nav-fixed #layoutSidenav #layoutSidenav_nav .zd-sidenav .zd-sidenav-menu {
   overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.zd-nav-fixed #layoutSidenav #layoutSidenav_nav .zd-sidenav .zd-sidenav-menu::-webkit-scrollbar {
+  display: none;
 }
 
 .zd-nav-fixed #layoutSidenav #layoutSidenav_content {
@@ -197,7 +229,8 @@ body {
   font-size: 1.3em !important;
 }
 
-.notifications-dropdown {
+.notifications-dropdown,
+.messages-dropdown {
   width: 320px;
   padding: 0;
 }
@@ -252,6 +285,7 @@ body {
 
 .zd-sidenav .zd-sidenav-menu {
   flex-grow: 1;
+  min-height: 0;
   padding: 0.5rem;
 }
 

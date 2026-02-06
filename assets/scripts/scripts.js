@@ -1,16 +1,19 @@
+// Configure NProgress immediately
+if (typeof NProgress !== 'undefined') {
+    NProgress.configure({ showSpinner: false });
+    NProgress.start();
+}
+
 // Initialize on page load
 $(window).on('load', () => {
     if (typeof NProgress !== 'undefined') {
-        NProgress.done();
+        setTimeout(() => {
+            NProgress.done();
+        }, 200);
     }
 });
 
 $(function () {
-    // Configure NProgress
-    if (typeof NProgress !== 'undefined') {
-        NProgress.configure({ showSpinner: false });
-    }
-
     // Toggle the side navigation
     const $sidebarToggle = $('#sidebarToggle');
     if ($sidebarToggle.length) {

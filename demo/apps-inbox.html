@@ -6,34 +6,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- Meta SEO -->
     <meta name="description" content="ZepDash - Free Bootstrap 5 Admin Dashboard" />
     <meta name="keywords" content="zepdash, admin dashboard, bootstrap 5, ui kit, webapp" />
     <meta name="author" content="ZepDash" />
     <meta name="robots" content="index, follow" />
 
-    <!-- Open Graph -->
     <meta property="og:title" content="ZepDash - Free Bootstrap 5 Admin Dashboard" />
     <meta property="og:description" content="ZepDash - Free Bootstrap 5 Admin Dashboard" />
     <meta property="og:type" content="website" />
-    <title>ZepDash - Basic Inputs</title>
+    <title>ZepDash - Inbox</title>
+
     <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
     <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/plugins/nprogress/nprogress.min.css" />
     <link href="../assets/styles/styles.css" rel="stylesheet" />
-
     <link rel="stylesheet" href="../assets/plugins/animate/animate.min.css" />
-
-    <link rel="stylesheet" href="../assets/plugins/sweetalert2/sweetalert2.min.css" />
-
-    <link rel="stylesheet" href="../assets/plugins/tempus-dominus/css/tempus-dominus.min.css" />
-
-    <link rel="stylesheet" href="../assets/plugins/select2/css/select2.min.css" />
-    <link rel="stylesheet" href="../assets/plugins/select2/css/select2-bootstrap-5-theme.min.css" />
-
     <link rel="stylesheet" href="../assets/plugins/simplebar/simplebar.min.css" />
     <link rel="stylesheet" href="../assets/plugins/phosphor/bold/style.css" />
+
+    <style>
+        .inbox-sidebar {
+            min-width: 220px;
+        }
+
+        .inbox-nav .nav-link {
+            color: var(--zd-text-muted);
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 2px;
+            display: flex;
+            align-items: center;
+            transition: var(--zd-transition);
+        }
+
+        .inbox-nav .nav-link:hover {
+            background-color: var(--zd-bg-light);
+            color: var(--zd-primary);
+        }
+
+        .inbox-nav .nav-link.active {
+            background-color: var(--zd-primary-subtle);
+            color: var(--zd-primary);
+            font-weight: 600;
+        }
+
+        .inbox-nav .nav-link i {
+            font-size: 1.1rem;
+            margin-right: 12px;
+        }
+
+        .email-item {
+            cursor: pointer;
+            transition: var(--zd-transition);
+            border-bottom: 1px solid var(--zd-border);
+        }
+
+        .email-item:hover {
+            background-color: #f8f9fa;
+            box-shadow: inset 3px 0 0 var(--zd-primary);
+        }
+
+        .email-item.unread {
+            background-color: #fdfdfd;
+            font-weight: 600;
+        }
+
+        .email-item .star {
+            color: #ccc;
+            cursor: pointer;
+        }
+
+        .email-item .star.active {
+            color: #f5a623;
+        }
+
+        .email-item .date {
+            min-width: 80px;
+            text-align: right;
+        }
+
+        .inbox-toolbar {
+            padding: 1rem;
+            background: #fff;
+            border-bottom: 1px solid var(--zd-border);
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+
+        .email-list-wrapper {
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            overflow: hidden;
+        }
+
+        @media (max-width: 991.98px) {
+            .inbox-sidebar {
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
 </head>
 
 <body class='zd-nav-fixed'>
@@ -48,7 +121,7 @@
             </button>
 
             <ul class="navbar-nav ms-auto align-items-center">
-                                                                        <!-- Messages -->
+                                                                <!-- Messages -->
                 <li class="nav-item dropdown me-2">
                     <a class="nav-link nav-icon" href="#" id="msgDropdown" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -167,21 +240,16 @@
                         <li>
                             <hr class="dropdown-divider m-0 opacity-10">
                         </li>
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center" href="profile.html">
-                                <i class="ph-bold ph-gear me-3 text-muted"></i> Account
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center text-danger" href="login.html">
-                                <i class="ph-bold ph-sign-out me-3"></i> Logout
-                            </a>
-                        </li>
+                        <li><a class="dropdown-item d-flex align-items-center" href="profile.html"><i
+                                    class="ph-bold ph-user me-3 text-muted"></i> Profile</a></li>
+                        <li><a class="dropdown-item d-flex align-items-center text-danger" href="login.html"><i
+                                    class="ph-bold ph-sign-out me-3"></i> Logout</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
     </header>
+
     <div id="layoutSidenav">
         <aside id="layoutSidenav_nav">
             <nav class="zd-sidenav accordion zd-sidenav-light" id="sidenavAccordion">
@@ -202,7 +270,7 @@
                             </nav>
                         </div>
                         <h2 class="zd-sidenav-menu-heading">Applications</h2>
-                        <a class="nav-link" href="apps-inbox.html">
+                        <a class="nav-link active" href="apps-inbox.html">
                             <div class="zd-nav-link-icon"><i class="ph-bold ph-envelope"></i></div>
                             <span>Inbox</span>
                         </a>
@@ -225,14 +293,14 @@
                                 <a class="nav-link" href="spinners.html">Spinners</a>
                             </nav>
                         </div>
-                        <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#formsCollapse" aria-expanded="true">
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#formsCollapse" aria-expanded="false">
                             <div class="zd-nav-link-icon"><i class="ph-bold ph-textbox"></i></div>
                             <span>Forms</span>
                             <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
                         </a>
-                        <div class="collapse show" id="formsCollapse" data-bs-parent="#sidenavAccordion">
+                        <div class="collapse" id="formsCollapse" data-bs-parent="#sidenavAccordion">
                             <nav class="zd-sidenav-menu-nested nav">
-                                <a class="nav-link active" href="forms-basic.html">Basic Inputs</a>
+                                <a class="nav-link" href="forms-basic.html">Basic Inputs</a>
                                 <a class="nav-link" href="forms-select.html">Select</a>
                                 <a class="nav-link" href="forms-checks.html">Checkboxes & Radios</a>
                                 <a class="nav-link" href="forms-layout.html">Form Layout</a>
@@ -308,155 +376,252 @@
                         </div>
                     </div>
                 </div>
-                <footer class="zd-sidenav-footer"><small>Logged in as:</small>
+                <footer class="zd-sidenav-footer">
+                    <small>Logged in as:</small>
                     <div>Ujang Kasep</div>
                 </footer>
             </nav>
         </aside>
+
         <main id="layoutSidenav_content">
-            <section class="container-fluid px-4">
+            <section class="container-fluid px-4 pb-5">
                 <header class="my-4">
-                    <h1 class="h4 mb-0 fw-bold">Basic Inputs</h1>
+                    <h1 class="h4 mb-0 fw-bold">Inbox</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                            <li class="breadcrumb-item">Forms</li>
-                            <li class="breadcrumb-item active">Basic Inputs</li>
+                            <li class="breadcrumb-item active">Inbox</li>
                         </ol>
                     </nav>
                 </header>
+
                 <div class="row">
-                    <div class="col-lg-6">
-                        <div class="card animate__animated animate__fadeIn mb-4">
-                            <div class="card-header fw-semibold">Text Inputs</div>
-                            <div class="card-body">
-                                <div class="mb-3">
-                                    <label class="form-label">Text</label>
-                                    <input type="text" class="form-control" placeholder="Enter text">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Email</label>
-                                    <input type="email" class="form-control" placeholder="name@example.com">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Password</label>
-                                    <input type="password" class="form-control" placeholder="Password">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="card animate__animated animate__fadeIn mb-4">
-                            <div class="card-header fw-semibold">Textarea & Disabled</div>
-                            <div class="card-body">
-                                <div class="mb-3">
-                                    <label class="form-label">Textarea</label>
-                                    <textarea class="form-control" rows="3" placeholder="Enter message"></textarea>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Disabled</label>
-                                    <input type="text" class="form-control" placeholder="Disabled input" disabled>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Readonly</label>
-                                    <input type="text" class="form-control" value="Readonly value" readonly>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="card animate__animated animate__fadeIn mb-4">
-                            <div class="card-header fw-semibold">Sizing</div>
-                            <div class="card-body">
-                                <input class="form-control form-control-lg mb-3" type="text" placeholder="Large input">
-                                <input class="form-control mb-3" type="text" placeholder="Default input">
-                                <input class="form-control form-control-sm" type="text" placeholder="Small input">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="card animate__animated animate__fadeIn mb-4">
-                            <div class="card-header fw-semibold">Input with Icon</div>
-                            <div class="card-body">
-                                <div class="input-group mb-3">
-                                    <span class="input-group-text"><i class="ph-bold ph-user"></i></span>
-                                    <input type="text" class="form-control" placeholder="Username">
-                                </div>
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="Search...">
-                                    <button class="btn btn-primary"><i class="ph-bold ph-magnifying-glass"></i></button>
+                    <!-- Inbox Sidebar -->
+                    <div class="col-lg-3 inbox-sidebar">
+                        <button class="btn btn-primary w-100 py-2 mb-4 shadow-sm fw-bold">
+                            <i class="ph-bold ph-pencil-simple-line me-2"></i> Compose
+                        </button>
+                        <div class="card border-0 shadow-sm rounded-4">
+                            <div class="card-body p-2">
+                                <nav class="nav flex-column inbox-nav">
+                                    <a class="nav-link active" href="#">
+                                        <i class="ph-bold ph-tray"></i> Inbox
+                                        <span class="badge bg-primary-subtle text-primary ms-auto">12</span>
+                                    </a>
+                                    <a class="nav-link" href="#">
+                                        <i class="ph-bold ph-paper-plane-tilt"></i> Sent
+                                    </a>
+                                    <a class="nav-link" href="#">
+                                        <i class="ph-bold ph-note"></i> Drafts
+                                        <span class="badge bg-warning-subtle text-warning ms-auto">2</span>
+                                    </a>
+                                    <a class="nav-link" href="#">
+                                        <i class="ph-bold ph-warning-circle"></i> Spam
+                                    </a>
+                                    <a class="nav-link" href="#">
+                                        <i class="ph-bold ph-trash"></i> Trash
+                                    </a>
+                                </nav>
+                                <hr class="my-2 opacity-10">
+                                <div class="px-3 py-2">
+                                    <small
+                                        class="text-uppercase fw-bold text-muted extra-small d-block mb-2">Labels</small>
+                                    <nav class="nav flex-column inbox-nav">
+                                        <a class="nav-link py-1" href="#"><i class="ph-bold ph-circle text-primary"
+                                                style="font-size: 0.6rem;"></i> Work</a>
+                                        <a class="nav-link py-1" href="#"><i class="ph-bold ph-circle text-success"
+                                                style="font-size: 0.6rem;"></i> Personal</a>
+                                        <a class="nav-link py-1" href="#"><i class="ph-bold ph-circle text-warning"
+                                                style="font-size: 0.6rem;"></i> Urgent</a>
+                                    </nav>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-12">
-                        <div class="card animate__animated animate__fadeIn mb-4">
-                            <div class="card-header fw-semibold">Advanced Date Pickers (Tempus Dominus)</div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-4 mb-3">
-                                        <label class="form-label">Basic Date</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text"><i class="ph-bold ph-calendar"></i></span>
-                                            <input type="text" class="form-control" id="td-date"
-                                                placeholder="Select date">
-                                        </div>
+
+                    <!-- Email List -->
+                    <div class="col-lg-9">
+                        <div class="card border-0 shadow-sm rounded-4 h-100">
+                            <div class="inbox-toolbar d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <div class="form-check mb-0 me-3">
+                                        <input class="form-check-input" type="checkbox" id="selectAll">
                                     </div>
-                                    <div class="col-md-4 mb-3">
-                                        <label class="form-label">Date & Time</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text"><i class="ph-bold ph-clock"></i></span>
-                                            <input type="text" class="form-control" id="td-datetime"
-                                                placeholder="Select date time">
-                                        </div>
+                                    <div class="btn-group border rounded shadow-sm">
+                                        <button class="btn btn-light btn-sm" title="Archive"><i
+                                                class="ph-bold ph-archive"></i></button>
+                                        <button class="btn btn-light btn-sm" title="Delete"><i
+                                                class="ph-bold ph-trash"></i></button>
+                                        <button class="btn btn-light btn-sm" title="Mark as read"><i
+                                                class="ph-bold ph-envelope-open"></i></button>
                                     </div>
-                                    <div class="col-md-4 mb-3">
-                                        <label class="form-label">Range Selection</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text"><i
-                                                    class="ph-bold ph-calendar-range"></i></span>
-                                            <input type="text" class="form-control" id="td-range"
-                                                placeholder="Select range">
-                                        </div>
+                                    <button class="btn btn-light btn-sm border shadow-sm ms-2" title="Refresh"><i
+                                            class="ph-bold ph-arrows-clockwise"></i></button>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <span class="small text-muted me-3">1-50 of 120</span>
+                                    <div class="btn-group border rounded shadow-sm">
+                                        <button class="btn btn-light btn-sm"><i
+                                                class="ph-bold ph-caret-left"></i></button>
+                                        <button class="btn btn-light btn-sm"><i
+                                                class="ph-bold ph-caret-right"></i></button>
                                     </div>
+                                </div>
+                            </div>
+
+                            <div class="email-list-wrapper">
+                                <div class="table-responsive">
+                                    <table class="table table-hover mb-0 align-middle">
+                                        <tbody>
+                                            <!-- Unread Email -->
+                                            <tr class="email-item unread">
+                                                <td class="ps-3" style="width: 40px;">
+                                                    <div class="form-check mb-0">
+                                                        <input class="form-check-input" type="checkbox">
+                                                    </div>
+                                                </td>
+                                                <td style="width: 40px;">
+                                                    <i class="ph-bold ph-star star active"></i>
+                                                </td>
+                                                <td style="width: 180px;"><span class="text-dark">Siti Juleha</span>
+                                                </td>
+                                                <td>
+                                                    <span class="text-truncate d-inline-block"
+                                                        style="max-width: 400px;">
+                                                        <span class="text-dark">Ayang, ntar sore jadi kan?</span> - Halo
+                                                        kasep, jangan lupa ya ntar sore kita mabar...
+                                                    </span>
+                                                </td>
+                                                <td class="pe-3 text-end date"><small class="text-muted">10:45
+                                                        AM</small></td>
+                                            </tr>
+                                            <!-- Read Email -->
+                                            <tr class="email-item">
+                                                <td class="ps-3">
+                                                    <div class="form-check mb-0">
+                                                        <input class="form-check-input" type="checkbox">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <i class="ph-bold ph-star star"></i>
+                                                </td>
+                                                <td><span class="text-muted">Asep Racing</span></td>
+                                                <td>
+                                                    <span class="text-truncate d-inline-block text-muted"
+                                                        style="max-width: 400px;">
+                                                        Mabar ML jam 9 ya kasep.. - Woi kasep, ntar malem gaskeun pushed
+                                                        rank...
+                                                    </span>
+                                                </td>
+                                                <td class="pe-3 text-end date"><small class="text-muted">昨天</small></td>
+                                            </tr>
+                                            <!-- More Emails -->
+                                            <tr class="email-item unread">
+                                                <td class="ps-3">
+                                                    <div class="form-check mb-0">
+                                                        <input class="form-check-input" type="checkbox">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <i class="ph-bold ph-star star"></i>
+                                                </td>
+                                                <td><span class="text-dark">Google Cloud</span></td>
+                                                <td>
+                                                    <span class="text-truncate d-inline-block"
+                                                        style="max-width: 400px;">
+                                                        <span class="text-dark">Your free trial is ending soon</span> -
+                                                        Hi Ujang, your Google Cloud free trial is about to expire.
+                                                    </span>
+                                                </td>
+                                                <td class="pe-3 text-end date"><small class="text-muted">Feb 5</small>
+                                                </td>
+                                            </tr>
+                                            <tr class="email-item">
+                                                <td class="ps-3">
+                                                    <div class="form-check mb-0">
+                                                        <input class="form-check-input" type="checkbox">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <i class="ph-bold ph-star star active"></i>
+                                                </td>
+                                                <td><span class="text-muted">GitHub</span></td>
+                                                <td>
+                                                    <span class="text-truncate d-inline-block text-muted"
+                                                        style="max-width: 400px;">
+                                                        [sepsu-dev/zepdash] New issue created #45 - I found a bug in the
+                                                        navbar...
+                                                    </span>
+                                                </td>
+                                                <td class="pe-3 text-end date"><small class="text-muted">Feb 4</small>
+                                                </td>
+                                            </tr>
+                                            <tr class="email-item">
+                                                <td class="ps-3">
+                                                    <div class="form-check mb-0">
+                                                        <input class="form-check-input" type="checkbox">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <i class="ph-bold ph-star star"></i>
+                                                </td>
+                                                <td><span class="text-muted">Slack Notifications</span></td>
+                                                <td>
+                                                    <span class="text-truncate d-inline-block text-muted"
+                                                        style="max-width: 400px;">
+                                                        Daily stand-up reminder - Don't forget to post your daily
+                                                        updates...
+                                                    </span>
+                                                </td>
+                                                <td class="pe-3 text-end date"><small class="text-muted">Feb 3</small>
+                                                </td>
+                                            </tr>
+                                            <tr class="email-item">
+                                                <td class="ps-3">
+                                                    <div class="form-check mb-0">
+                                                        <input class="form-check-input" type="checkbox">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <i class="ph-bold ph-star star"></i>
+                                                </td>
+                                                <td><span class="text-muted">Trakteer.id</span></td>
+                                                <td>
+                                                    <span class="text-truncate d-inline-block text-muted"
+                                                        style="max-width: 400px;">
+                                                        Cireng Lover baru saja mentraktir kopi! - Kamu dapet traktiran
+                                                        kopi nih ujang...
+                                                    </span>
+                                                </td>
+                                                <td class="pe-3 text-end date"><small class="text-muted">Feb 2</small>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </section>
         </main>
     </div>
     <script src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/plugins/sweetalert2/sweetalert2.all.min.js"></script>
-    <script src="../assets/plugins/popper/popper.min.js"></script>
-    <script src="../assets/plugins/tempus-dominus/js/tempus-dominus.min.js"></script>
     <script src="../assets/plugins/jquery/jquery.min.js"></script>
-    <script src="../assets/plugins/select2/js/select2.min.js"></script>
-
     <script src="../assets/plugins/simplebar/simplebar.min.js"></script>
     <script src="../assets/plugins/nprogress/nprogress.min.js"></script>
     <script src="../assets/scripts/scripts.js"></script>
     <script>
         $(function () {
-            const $dateEl = $('#td-date');
-            if ($dateEl.length) {
-                new tempusDominus.TempusDominus($dateEl[0], {
-                    display: { components: { clock: false }, theme: 'light' }
-                });
-            }
-            const $datetimeEl = $('#td-datetime');
-            if ($datetimeEl.length) {
-                new tempusDominus.TempusDominus($datetimeEl[0], {
-                    display: { theme: 'light' }
-                });
-            }
-            const $rangeEl = $('#td-range');
-            if ($rangeEl.length) {
-                new tempusDominus.TempusDominus($rangeEl[0], {
-                    display: { components: { clock: false }, theme: 'light' }
-                });
-            }
+            $('.email-item .star').on('click', function (e) {
+                e.stopPropagation();
+                $(this).toggleClass('active ph-star ph-fill');
+            });
+
+            $('.email-item').on('click', function () {
+                $(this).removeClass('unread');
+            });
         });
     </script>
 </body>
