@@ -1,4 +1,4 @@
-# 🚀 NaonDash - Premium Bootstrap 5 Admin Template
+# 🚀 NaonDash - Free Bootstrap 5 Admin Dashboard
 
 ![GitHub downloads](https://img.shields.io/github/downloads/sepsu-dev/naondash/total?style=for-the-badge&color=006fee)
 ![Bootstrap 5](https://img.shields.io/badge/Bootstrap-v5.3-7952b3?style=for-the-badge&logo=bootstrap&logoColor=white)
