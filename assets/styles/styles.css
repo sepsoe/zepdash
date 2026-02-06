@@ -155,6 +155,8 @@ body {
 .zd-topnav .navbar-brand {
   width: 265px;
   margin: 0;
+  text-decoration: none;
+  color: inherit;
 }
 
 .zd-topnav.navbar-light {
